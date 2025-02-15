@@ -44,7 +44,7 @@ alert(user.name);
 alert(user.surname);
 */
 function IsEmpty(obj){
-    for(key in obj){
+    for(let key in obj){
         return false;
     }
     return false;
@@ -59,7 +59,7 @@ let salaries = {
 
 function Sum(salaries){
 let sum=0;
-for (key in salaries){
+for (let key in salaries){
     sum+=salaries[key];
 }
 return sum;
@@ -75,10 +75,11 @@ let menu = {
   };
 
   function multiplyNumeric(menu){
-    for(key in menu){
-        if( typeof menu[key]=='Number'){
+    for(let key in menu){
+        if(typeof menu[key]=='number'){
             menu[key]*=2;
         }
     }
+    multiplyNumeric(menu);
     console.log(multiplyNumeric(menu));
   }

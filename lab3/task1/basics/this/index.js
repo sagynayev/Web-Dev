@@ -29,7 +29,7 @@ function makeUser() {
   alert( user.ref.name );
 
 
-  let calculutar={
+  let calculator={
     sum(){
         return this.a+this.b;
     },
@@ -41,6 +41,6 @@ function makeUser() {
         this.b = +prompt('b?', 0);
       }
   };
-  calculutar.read();
-  alert(calculutar.sum());
-  alert(calculutar.mul());
+  calculator.read();
+  alert(calculator.sum());
+  alert(calculator.mul());
