@@ -1,5 +1,7 @@
 <h2 class="catalog-title">Каталог товаров</h2>
 
+
+
 <div class="products-container">
   <div class="product-card" *ngFor="let product of products">
     <div class="gallery">
@@ -12,10 +14,11 @@
     <a [href]="product.link" target="_blank" class="details-button">Подробнее</a>
 
     <div class="share-buttons">
-      <button (click)="shareOnWhatsApp(product.link)">
+      <button (click)="shareOnWhatsApp('+77756553005',product.link)">
         📱 Поделиться в WhatsApp
       </button>
-      <button (click)="shareOnTelegram(product.link)">
+
+      <button (click)="shareOnTelegram('odinelit', product.link)">
         📩 Поделиться в Telegram
       </button>
     </div>
