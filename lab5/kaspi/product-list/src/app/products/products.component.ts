@@ -150,11 +150,11 @@ selectCategory(event:any){
 
 
 
-  shareOnWhatsApp(phone: string='+77756553005', link: string='Hello'): void {
+  shareOnWhatsApp(phone: string='+77081216582', link: string='Hello'): void {
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Посмотрите: ' + link)}`, '_blank');
   }
   
-  shareOnTelegram(usernameOrGroup: string = 'odinelit', link: string='Hello'): void {
+  shareOnTelegram(usernameOrGroup: string = 'sagynayevv', link: string='Hello'): void {
     window.open(
       `https://t.me/${usernameOrGroup}?text=${encodeURIComponent('Посмотрите: ' + link)}`,
       '_blank'
