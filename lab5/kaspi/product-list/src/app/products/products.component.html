@@ -28,7 +28,9 @@
     <div class="action-buttons">
       <button class="like-button" (click)="likeProduct(product.id)">👍 Like</button>
       <button class="remove-button" (click)="removeProduct(product.id)">🗑 Remove</button>
-    </div>
+      <button class="favorite-button" (click)="favoriteProduct(product.id)">Favorite</button>
+      <button class="delFavorite-button" (click)="delFavoriteProduct(product.id)">delFavorite</button>
+       </div>
 
     <div class="share-buttons">
       <button (click)="shareOnWhatsApp('+77081216582',product.link)">
@@ -39,5 +41,16 @@
         📩 Поделиться в Telegram
       </button>
     </div>
+  </div>
+</div>
+
+<h2>Favorites products</h2>
+<div  class="favorites-container">
+  <div class="product-card" *ngFor="let product of getFavoritiesProducts()">
+    <h3>{{ product.name }}</h3>
+    <div class="rating-likes">
+    <p>{{ product.description }}</p>
+    <p>⭐ {{ product.rating }}</p>
+    <button class="favorite-button" (click)="delFavoriteProduct(product.id)">del?</button>
   </div>
 </div>

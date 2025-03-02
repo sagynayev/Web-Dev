@@ -14,6 +14,7 @@ export class ProductsComponent {
 
   categories=['iphone 13','iphone 14','iphone 15','iphone 16'];
   selected='iphone 13';
+  favorities: number[] = [];//
   products: Product[] = [
     {
       id:1,
@@ -118,6 +119,9 @@ export class ProductsComponent {
 
   ];
 
+
+
+
 likeProduct(id:number){
   for(var i=0;i<this.products.length;i++){
     if(this.products[i].id==id){
@@ -126,30 +130,39 @@ likeProduct(id:number){
   }
 }
 removeProduct(id:number){
-  var newProducts=[]
-  for(var i=0;i<this.products.length;i++){
-    if(this.products[i].id!=id){
-      newProducts.push(this.products[i]);
-    }
+  this.products = this.products.filter(product => product.id!=id);
+  this.favorities = this.favorities.filter(favId => favId != id);
+}
+
+getfilteredProducts() {
+  return this.products.filter(product => product.category === this.selected);
+}
+favoriteProduct(id: number){
+  const index = this.favorities.indexOf(id);
+  if(index==-1){
+    this.favorities.push(id);
+
   }
-  this.products=newProducts
-}
-
-getfilteredProducts(){
-  var filteredProducts=[]
-  for (var i=0;i<this.products.length;i++){
-    if(this.products[i].category==this.selected){
-      filteredProducts.push(this.products[i]);
-    }
+  else {
+    this.favorities.splice(index, 1);
   }
-  return filteredProducts
+}//
+checkFavorite (id: number): boolean {
+  return this.favorities.includes(id);
 }
-selectCategory(event:any){
-  this.selected=event?.target.value;
+selectCategory(event: Event) {
+  const target = event.target as HTMLSelectElement;
+  this.selected = target.value;
+}
+
+delFavoriteProduct(productId: number): void {
+  this.favorities = this.favorities.filter(id => id !== productId);
 }
 
 
-
+getFavoritiesProducts() {
+  return this.products.filter(product=>this.favorities.includes(product.id));
+}
   shareOnWhatsApp(phone: string='+77081216582', link: string='Hello'): void {
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Посмотрите: ' + link)}`, '_blank');
   }
