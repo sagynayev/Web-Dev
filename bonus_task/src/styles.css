@@ -1,0 +1,93 @@
+body {
+    background: #f8f9fc;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.task-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.task-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.task-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.task-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 10px;
+}
+.task-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+.task-meta img {
+    width: 16px;
+    margin-right: 6px;
+}
+.task-badge {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-left: 8px;
+}
+.work { background: #cb5669; color: #d9534f; }
+.personal { background: #3b89c1; color: #007bff; }
+.study { background: #e6f7e6; color: #28a745; }
+.details-link {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.details-link:hover {
+    text-decoration: underline;
+}
+button {
+    display: block;
+    width: 100%;
+    background: #28a745;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
